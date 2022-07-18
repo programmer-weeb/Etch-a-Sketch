@@ -1,0 +1,32 @@
+.container {
+    text-align: center;
+    /* margin-left: auto;
+    margin-right: auto;
+    height: 100vh; */
+    /* height: 999px; */
+
+}
+
+.row {
+    display: flex;
+    /* gap: 3em; */
+    /* padding: 3em; */
+    
+}
+
+.cell {
+    /* width: 100px;
+    height: 100px; */
+    border: 1px solid black;
+}
+
+.cell:hover {
+    background-color: red;
+}
+
+.clicked {
+    background-color: red;
+}
+.hoverd {
+    background-color: red;
+}
