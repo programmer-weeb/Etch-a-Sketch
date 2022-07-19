@@ -1,48 +1,45 @@
 
 function generateDivs(num) {
-    let containerDiv = document.querySelector("body > div");
-    for (let i = 0; i < num; i++) {
-        let row = document.createElement('div')
-        row.className = 'row'
+	let containerDiv = document.querySelector("body > div");
+	for (let i = 0; i < num; i++) {
+		let row = document.createElement('div')
+		row.className = 'row'
 
-        for (let j = 0; j < num; j++) {
-            let cell = document.createElement('div')
-            cell.className = 'cell'
-            cell.innerText = (i * num) + j
-            row.appendChild(cell);
-        }
-        containerDiv.appendChild(row);
-    }
+		for (let j = 0; j < num; j++) {
+			let cell = document.createElement('div')
+			cell.className = 'cell'
+			cell.addEventListener('mouseover', () => {
+				cell.classList.add('clicked');
+
+			})
+			cell.innerText = (i * num) + j
+			row.appendChild(cell);
+		}
+		containerDiv.appendChild(row);
+	}
 }
 
-// change cell color on click
-let cells = document.querySelectorAll('.cell')
-cells.forEach((cell) => {
-    cell.addEventListener('mouseover', () => {
-        cell.classList.add('clicked');
-        // cell.style.background-color = red
-    })
-})
+
 
 
 // Taken code from internet
 
 /* function genDivs(v) {
-    // var e = document.body; // whatever you want to append the rows to: 
-    let containerDiv = document.querySelector('.container')
-    for (let i = 0; i < v; i++) {
-        let row = document.createElement("div");
-        row.className = "row";
+	// var e = document.body; // whatever you want to append the rows to: 
+	let containerDiv = document.querySelector('.container')
+	for (let i = 0; i < v; i++) {
+		let row = document.createElement("div");
+		row.className = "row";
 
-        for (let x = 1; x <= v; x++) {
-            let cell = document.createElement("div");
-            cell.className = "gridsquare";
-            cell.innerText = (i * v) + x;
-            row.appendChild(cell);
-        }
-        containerDiv.appendChild(row);
-    }
-    // document.getElementById("code").innerText = e.innerHTML;
+		for (let x = 1; x <= v; x++) {
+			let cell = document.createElement("div");
+			cell.className = "gridsquare";
+			cell.innerText = (i * v) + x;
+			row.appendChild(cell);
+		}
+		containerDiv.appendChild(row);
+	}
+	// document.getElementById("code").innerText = e.innerHTML;
 
 }
  */
@@ -59,45 +56,45 @@ createGrid(squareSize);
 
 // Create Squared Divs
 function createDiv(size) {
-  const div = document.createElement('div');
-  div.classList.add('box');
-  div.style.width = `${size}px`;
-  div.style.height = `${size}px`;
+	const div = document.createElement('div');
+	div.classList.add('box');
+	div.style.width = `${size}px`;
+	div.style.height = `${size}px`;
 
-  return div;
+	return div;
 }
 
 // Creat The Grid and append it to grid
 function createGrid(gridSize) {
-  for (let i = 0; i < gridSize; i++) {
-    for (let j = 0; j < gridSize; j++) {
-      grid.appendChild(createDiv(grid.clientWidth / gridSize));
-    }
-  }
+	for (let i = 0; i < gridSize; i++) {
+		for (let j = 0; j < gridSize; j++) {
+			grid.appendChild(createDiv(grid.clientWidth / gridSize));
+		}
+	}
 }
 
 function reset() {
-  while (grid.firstChild) {
-    grid.removeChild(grid.lastChild);
-  }
-  createGrid(squareSize);
+	while (grid.firstChild) {
+		grid.removeChild(grid.lastChild);
+	}
+	createGrid(squareSize);
 }
 
 // Used event delegation to target children of the grid
 grid.addEventListener('mouseover', function (e) {
-  // Add the "active" class to only divs with a "box" class
-  if (e.target.matches('.box')) {
-    e.target.classList.add('active');
-  }
+	// Add the "active" class to only divs with a "box" class
+	if (e.target.matches('.box')) {
+		e.target.classList.add('active');
+	}
 });
 
 gridSize.addEventListener('input', function (e) {
-  squareSize = e.target.value;
-  gridValue.textContent = `${squareSize}x${squareSize}`;
+	squareSize = e.target.value;
+	gridValue.textContent = `${squareSize}x${squareSize}`;
 });
 
 applyGridSize.addEventListener('click', function () {
-  reset();
+	reset();
 });
 
 resetBtn.addEventListener('click', reset);
