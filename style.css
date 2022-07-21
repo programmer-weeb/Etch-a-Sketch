@@ -1,11 +1,12 @@
 .container {
     /* text-align: center; */
     /* margin-left: auto;
-    margin-right: auto;
-    height: 100vh; */
+    margin-right: auto; */
+    height: 60vh;
+    width: 60vw;
     /* height: 999px; */
-    width: 700px;
-    height: 700px;
+    /* width: 700px; */
+    /* height: 700px; */
     display: grid;
     border: 1px solid black;
     margin-left: auto;
