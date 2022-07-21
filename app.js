@@ -8,12 +8,12 @@ function generateDivs(num) {
 		for (let j = 0; j < num; j++) {
 			let cell = document.createElement('div')
 			cell.className = 'cell'
-			cell.addEventListener('mouseover', () => {
-				cell.classList.add('clicked');
-
-			})
 			cell.innerText = (i * num) + j
 			row.appendChild(cell);
+			cell.addEventListener('mouseover', () => {
+				cell.classList.add('clicked');
+		
+			})
 		}
 		containerDiv.appendChild(row);
 	}
