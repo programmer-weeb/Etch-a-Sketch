@@ -33,3 +33,8 @@
 .hoverd {
     background-color: red;
 }
+
+body > button {
+    display: block;
+    margin: 3em auto ;
+}

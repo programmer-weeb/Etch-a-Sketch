@@ -23,3 +23,13 @@ function generateDivsWithGrid(num) {
 
 
 
+const btnForCells = document.querySelector("body > button")
+btnForCells.addEventListener('click', () => {
+	let nOfSquares = prompt("enter the number of squares", "16");
+	if (nOfSquares > 2 && nOfSquares < 100) {
+		generateDivsWithGrid(nOfSquares);
+	}
+	else {
+		console.log('invalid input');
+	}
+})
