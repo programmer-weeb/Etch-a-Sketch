@@ -36,6 +36,15 @@ btnForCells.addEventListener('click', () => {
 	}
 })
 
-document.querySelector('body').addEventListener('click', () => {
-	click = !click;
+document.querySelector('body').addEventListener('click', (e) => {
+
+	if (e.target.tagName != 'BUTTON') {
+		click = !click;
+		if (click) {
+			document.querySelector("div.mode").textContent = "Mode: coloring"
+		} else {
+			document.querySelector("div.mode").textContent = "Mode: not coloring"
+
+		}
+	}
 })
