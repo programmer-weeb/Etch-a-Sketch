@@ -20,7 +20,7 @@ function generateDivsWithGrid(num) {
 
 	}
 }
-
+document.addEventListener('onload', generateDivsWithGrid(16))
 
 
 const btnForCells = document.querySelector("body > button")
