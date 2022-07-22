@@ -1,3 +1,5 @@
+let click = true;
+
 function generateDivsWithGrid(num) {
 	let containerDiv = document.querySelector("body > div");
 
@@ -12,7 +14,7 @@ function generateDivsWithGrid(num) {
 		// cell.style.backgroundColor = 'blue';
 		cell.addEventListener('mouseover', () => {
 			// cell.classList.add('hoverd')
-			cell.style.backgroundColor = 'red';
+			if (click) cell.style.backgroundColor = 'red';
 		})
 		containerDiv.style.gridTemplateColumns = `repeat(${num}, 1fr)`;
 		containerDiv.style.gridTemplateRow = `repeat(${num}, 1fr)`;
@@ -32,4 +34,8 @@ btnForCells.addEventListener('click', () => {
 	else {
 		console.log('invalid input');
 	}
+})
+
+document.querySelector('body').addEventListener('click', () => {
+	click = !click;
 })
