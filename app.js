@@ -1,5 +1,5 @@
 let click = true;
-
+let errorMessage = document.querySelector('.error')
 function generateDivsWithGrid(num) {
 	let containerDiv = document.querySelector("body > div");
 
@@ -22,7 +22,10 @@ function generateDivsWithGrid(num) {
 
 	}
 }
-document.addEventListener('onload', generateDivsWithGrid(16))
+document.addEventListener('DOMContentLoaded', () => {
+	errorMessage.style.display = "none";
+	generateDivsWithGrid(16)
+})
 
 
 const btnForCells = document.querySelector("body > button")
@@ -30,9 +33,11 @@ btnForCells.addEventListener('click', () => {
 	let nOfSquares = prompt("enter the number of squares", "16");
 	if (nOfSquares > 2 && nOfSquares < 100) {
 		generateDivsWithGrid(nOfSquares);
+		errorMessage.style.display = "none"
 	}
 	else {
 		console.log('invalid input');
+		errorMessage.style.display = "block"
 	}
 })
 
