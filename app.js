@@ -3,7 +3,7 @@ function generateDivsWithGrid(num) {
 
 	// clear out any exsisting cell
 	let cells = containerDiv.querySelectorAll('div')
-	cells.forEach(cell => cell.remove)
+	cells.forEach(cell => cell.remove())
 
 	for (let i = 0; i < num * num; i++) {
 		let cell = document.createElement('div')
